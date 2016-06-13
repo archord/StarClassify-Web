@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+  <bean class="com.gwac.action.GetCatfileSuffixJson" scope="prototype">
+    <property name="dao" ref="catDao" />	
+  </bean>
+
+  <bean class="com.gwac.action.GetCatfileJson" scope="prototype">
+    <property name="dao" ref="catDao" />	
+  </bean>
+  
+  <bean class="com.gwac.action.DoStarClassify" scope="prototype">
+    <property name="dao" ref="starClassifyDao" />	
+  </bean>
+  
+  <bean class="com.gwac.action.GetStarClassifyJson" scope="prototype">
+    <property name="dao" ref="starClassifyDao" />	
+  </bean>
+
+  <bean class="com.gwac.action.GetRefStarListJson" scope="prototype">
+    <property name="dao" ref="starDao" />	
+  </bean>
+
+  <bean class="com.gwac.action.GetStarRecordsJson" scope="prototype">
+    <property name="dao" ref="starDao" />	
+  </bean>
+
+  <bean class="com.gwac.action.GetStarTypeJson" scope="prototype">
+    <property name="dao" ref="starTypeDao" />	
+  </bean>
+  
+</beans>
