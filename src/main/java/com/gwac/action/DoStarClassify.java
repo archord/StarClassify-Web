@@ -22,6 +22,7 @@ public class DoStarClassify extends ActionSupport {
   private String dateStr;
   private long starId;
   private int starTypeId;
+  private long catId;
 
   @Actions({
     @Action(value = "/do-star-classify", results = {
@@ -29,7 +30,7 @@ public class DoStarClassify extends ActionSupport {
   })
   @SuppressWarnings("unchecked")
   public String execute() throws Exception {
-    dao.saveOrUpdate(dateStr, starId, starTypeId);
+    dao.saveOrUpdate(dateStr, catId, starId, starTypeId);
     return "json";
   }
 
@@ -59,6 +60,13 @@ public class DoStarClassify extends ActionSupport {
    */
   public void setDateStr(String dateStr) {
     this.dateStr = dateStr;
+  }
+
+  /**
+   * @param catId the catId to set
+   */
+  public void setCatId(long catId) {
+    this.catId = catId;
   }
 
 }

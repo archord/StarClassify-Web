@@ -22,6 +22,7 @@ public class GetStarClassifyJson extends ActionSupport{
   private List<StarClassify> objs;
   private Long starId;
   private String dateStr;
+  private long catId;
 
   @Actions({
     @Action(value = "/get-star-classify-json", results = {
@@ -30,7 +31,7 @@ public class GetStarClassifyJson extends ActionSupport{
   @SuppressWarnings("unchecked")
   public String execute() throws Exception {
         
-    objs=dao.getStarClassifyByStarId(dateStr, starId);
+    objs=dao.getStarClassifyByStarId(dateStr, catId, starId);
     return "json";
   }
 
@@ -60,6 +61,13 @@ public class GetStarClassifyJson extends ActionSupport{
    */
   public void setDateStr(String dateStr) {
     this.dateStr = dateStr;
+  }
+
+  /**
+   * @param catId the catId to set
+   */
+  public void setCatId(long catId) {
+    this.catId = catId;
   }
 
 

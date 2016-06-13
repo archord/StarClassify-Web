@@ -46,12 +46,13 @@ $(function() {
     var queryUrl = getStarClassify;
     var starid = $('#refStar').val();
     var dateStr = $('#dataDate').val();
+    var catId = $('#tmplFile').val();
     $("#starClassifyInfo").html("");
     $("input[name=starType]").prop('checked', false);
     $.ajax({
       type: "get",
       url: queryUrl,
-      data: 'starId=' + starid + "&dateStr=" + dateStr,
+      data: 'starId=' + starid + "&dateStr=" + dateStr + "&catId=" + catId,
       async: false,
       dataType: 'json',
       success: function(data) {
@@ -191,7 +192,8 @@ $(function() {
         var objs = data.objs;
         $('#tmplFile').append($('<option>', {
           value: 0,
-          text: "模板文件列表"
+          text: "模板文件列表",
+          selected: 'selected'
         }));
         $.each(objs, function(i, item) {
           var catfileName = item.catfile;
@@ -233,6 +235,7 @@ $(function() {
     var starId = $('#refStar').val();
     var starTypeId = $('input[name="starType"]:checked').val();
     var dateStr = $('#dataDate').val();
+    var catId = $('#tmplFile').val();
     if (starId === 0) {
       console.log("请选择模板文件！");
       return;
@@ -240,11 +243,11 @@ $(function() {
     $.ajax({
       type: "get",
       url: queryUrl,
-      data: 'starId=' + starId + "&starTypeId=" + starTypeId + "&dateStr=" + dateStr,
+      data: 'starId=' + starId + "&starTypeId=" + starTypeId + "&dateStr=" + dateStr + "&catId=" + catId,
       async: false,
       dataType: 'json',
       success: function(data) {
-        console.log("do classify, starid=" + starId + ",typeid=" + starTypeId);
+        console.log("do classify, starid=" + starId + ",typeid=" + starTypeId + ",dateStr=" + dateStr + ",catId=" + catId);
       }
     });
   }
