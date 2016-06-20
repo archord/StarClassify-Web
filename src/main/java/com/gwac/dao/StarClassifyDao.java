@@ -14,4 +14,5 @@ import java.util.List;
 public interface StarClassifyDao  extends BaseHibernateDao<StarClassify>{
   public List<StarClassify> getStarClassifyByStarId(String dateStr, long catId, long starId);
   public void saveOrUpdate(String dateStr, long catId, long starId, int starTypeId);
+  public List<Long> getStarIdsByCatid(String dateStr, long catid, int starTypeId);
 }

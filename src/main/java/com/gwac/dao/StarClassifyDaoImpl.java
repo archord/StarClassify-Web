@@ -15,6 +15,15 @@ import org.hibernate.Session;
 public class StarClassifyDaoImpl extends BaseHibernateDaoImpl<StarClassify> implements StarClassifyDao {
 
   @Override
+  public List<Long> getStarIdsByCatid(String dateStr, long catid, int starTypeId) {
+
+    String sql = "select star_id from star_classify where catid=" + catid + " and st_id=" + starTypeId + " and date_str='" + dateStr + "' order by star_id";
+    Session session = getCurrentSession();
+    Query q = session.createSQLQuery(sql);
+    return q.list();
+  }
+
+  @Override
   public List<StarClassify> getStarClassifyByStarId(String dateStr, long catId, long starId) {
 
     String sql = "select sc.*, st.st_name "

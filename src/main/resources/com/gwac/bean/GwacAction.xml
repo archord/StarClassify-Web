@@ -24,6 +24,10 @@
     <property name="dao" ref="starDao" />	
   </bean>
 
+  <bean class="com.gwac.action.GetRefStarListJson2" scope="prototype">
+    <property name="dao" ref="starClassifyDao" />	
+  </bean>
+
   <bean class="com.gwac.action.GetStarRecordsJson" scope="prototype">
     <property name="dao" ref="starDao" />	
   </bean>
