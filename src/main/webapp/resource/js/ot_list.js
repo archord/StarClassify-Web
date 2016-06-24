@@ -60,9 +60,12 @@ $(function() {
         if (data.objs.length > 0) {
           var scObj = data.objs[0];
 //          var scObjStr = $.param(scObj);
-          $("#starClassifyInfo").html("max=" + scObj.max + ",min=" + scObj.min + ",mean=" + scObj.mean
-                  + ",std=" + scObj.std + ",mid=" + scObj.mid + ",mad=" + scObj.mad + ",k=" + scObj.k
-                  + ",r1=" + scObj.r1 + ",r2=" + scObj.r2 + ",r3=" + scObj.r3 + ",myw=" + scObj.myw);
+          $("#starClassifyInfo").html("max=" + scObj.max + ",&nbsp;&nbsp;min=" + scObj.min + ",&nbsp;&nbsp;mean=" + scObj.mean
+                  + ",&nbsp;&nbsp;std=" + scObj.std + ",&nbsp;&nbsp;mid=" + scObj.mid + ",&nbsp;&nbsp;mad=" + scObj.mad + ",&nbsp;&nbsp;k=" + scObj.k
+                  + ",&nbsp;&nbsp;r1=" + scObj.r1 + ",&nbsp;&nbsp;r2=" + scObj.r2 + ",&nbsp;&nbsp;r3=" + scObj.r3 + ",&nbsp;&nbsp;myw=" + scObj.myw
+                  + "<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                  +"p1=" + scObj.p1 + ",&nbsp;&nbsp;p2=" + scObj.p2 + ",&nbsp;&nbsp;p3=" + scObj.p3 + ",&nbsp;&nbsp;p4=" + scObj.p4 
+                  + ",&nbsp;&nbsp;p5=" + scObj.p5 + ",&nbsp;&nbsp;p6=" + scObj.p6 + ",&nbsp;&nbsp;p7=" + scObj.p7);
           $("input[name=starType][value='" + scObj.stId + "']").prop("checked", true);
         } else {
           $("#starClassifyInfo").html("");
